@@ -1,0 +1,19 @@
+<div class="col-6 pb-5"><h1><a href="/">Task Tracker</a></h1></div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Task</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success" role="alert">
+    {{alert}}
+</div>
+{{/if}}
+
+{{#each rows}}
+    <form class="row g-3 needs-validation" method="POST" action="/edittask/{{this.id}}" novalidate>
+        {{> task-form}}
+    </form>
+{{/each}}

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-6"><h1><a href="/">Task Tracker</a></h1></div>
+    <div class="col-6 d-flex justify-content-end"><a href="/addtask" type="button" class="btn btn-primary align-self-center p-3 pr-5 pl-5 m-3">+ Add Task</a>  
+    </div>
+
+</div>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col" class="text-end">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each rows}}
+    <tr>
+      <td>{{this.task}}</td>
+      <td class="text-end">
+        <a href="/edittask/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Edit</a>
+        <a href="/{{this.id}}" type="button" class="btn btn-light btn-small">Delete</a>
+      </td>
+    </tr>
+
+    {{/each}}
+
+  </tbody>
+</table>
